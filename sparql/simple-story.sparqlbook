@@ -1,0 +1,62 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Contains the queries, used to populate the jupyter notebook",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# Some notices for a given day\n\nPREFIX epo: <http://data.europa.eu/a4g/ontology#>\n\nSELECT DISTINCT ?Notice WHERE {\n    ?Notice epo:hasPublicationDate  \"20230911\".\n} LIMIT 3",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX epo: <http://data.europa.eu/a4g/ontology#>\n\nSELECT ?title\nWHERE {\n    ?Notice epo:hasPublicationDate \"20230911\" ;\n            epo:refersToProcedure [ epo:hasTitle ?title ] .\n    FILTER (langMatches(lang(?title), \"en\") || !bound(?title))\n}\nLIMIT 50\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX epo: <http://data.europa.eu/a4g/ontology#>\n\nSELECT (COUNT(?Notice) AS ?NoticeCount) \nWHERE {\n    ?Notice a epo:Notice ;\n            epo:hasPublicationDate \"20230911\" .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX epo: <http://data.europa.eu/a4g/ontology#>\n\nSELECT ?title\nWHERE {\n    ?notice epo:hasPublicationDate \"20230911\" ;\n            epo:refersToProcedure [ epo:hasTitle ?title ] .\n    FILTER(LANG(?title) = 'en')\n} LIMIT 10\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX epo: <http://data.europa.eu/a4g/ontology#>\n\nSELECT (COUNT(?Notice) AS ?NoticeCount) \nWHERE {\n    ?Notice a epo:Notice ;\n            epo:hasPublicationDate \"20230911\" .\n}\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# Which are the values of tenders for a given day?\n\nPREFIX epo: <http://data.europa.eu/a4g/ontology#>\nPREFIX cccev: <http://data.europa.eu/m8g/>\nPREFIX dct: <http://purl.org/dc/terms/> \n\nSELECT DISTINCT\n?Notice\n?PublicationDate\n?AwardedValue\n?LotAwardedValueCurrencyURI\nwhere {\n\n    VALUES ?PublicationDate {\n        \"20230911\"\n    }\n\n    ?Notice\n            epo:hasPublicationDate ?PublicationDate;\n            epo:refersToLot ?Lot .\n    ?LotAwardOutcome epo:describesLot ?Lot ;\n                     epo:hasAwardedValue / epo:hasAmountValue ?AwardedValue;\n                     epo:hasAwardedValue / epo:hasCurrency ?LotAwardedValueCurrencyURI.\n\n} LIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX epo: <http://data.europa.eu/a4g/ontology#>\nPREFIX cccev: <http://data.europa.eu/m8g/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX euvoc: <http://publications.europa.eu/ontology/euvoc#>\n\nSELECT ?concept (COUNT(?Notice) AS ?count) ?label\nWHERE {\n    VALUES ?PublicationDate {\n        \"20230911\"\n    }\n\n    ?Notice epo:refersToProcedure ?procedure.\n    ?procedure epo:hasPurpose ?purpose .\n    ?purpose epo:hasMainClassification ?classification .\n    ?classification a skos:Concept ;\n            skos:prefLabel ?label ;\n            euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> .\n    FILTER(LANG(?label) = 'en')\n}\nGROUP BY ?concept ?label\nORDER BY DESC(?count)\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX epo: <http://data.europa.eu/a4g/ontology#>\nPREFIX cccev: <http://data.europa.eu/m8g/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX euvoc: <http://publications.europa.eu/ontology/euvoc#>\n\nSELECT   (count(?notice) as ?noticeCount) (count(?classificationLabel) as ?labelCount) \nWHERE {\n    ?notice a epo:Notice ;\n            epo:hasPublicationDate \"20230911\";\n            epo:refersToProcedure [ \n                a epo:Procedure ;\n                epo:hasPurpose [\n                    a epo:Purpose ;\n                    epo:hasMainClassification ?classification ;\n                    \n                ] \n            ] .\n            ?classification a skos:Concept ;\n            skos:prefLabel ?classificationLabel ;\n            euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> .\n    FILTER(LANG(?classificationLabel) = 'en')\n}\n# GROUP BY ?publicationDate ?classification\nLIMIT 10\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX epo: <http://data.europa.eu/a4g/ontology#>\nPREFIX cccev: <http://data.europa.eu/m8g/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX euvoc: <http://publications.europa.eu/ontology/euvoc#>\n\nSELECT   (count(?notice) as ?noticeCount) ?classificationLabel\nWHERE {\n    ?notice a epo:Notice ;\n            epo:hasPublicationDate \"20230911\";\n            epo:refersToProcedure [ \n                a epo:Procedure ;\n                epo:hasPurpose [\n                    a epo:Purpose ;\n                    epo:hasMainClassification ?classification ;\n                    \n                ] \n            ] .\n            ?classification a skos:Concept ;\n            skos:prefLabel ?classificationLabel ;\n            euvoc:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> .\n    FILTER(LANG(?classificationLabel) = 'en')\n}\nGROUP BY ?classificationLabel\nORDER BY DESC(?noticeCount)\n",
+    "metadata": {}
+  }
+]

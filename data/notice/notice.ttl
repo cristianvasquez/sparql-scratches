@@ -1,0 +1,189 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://data.europa.eu/a4g/resource/> .
+@prefix ns2:	<http://data.europa.eu/a4g/ontology#> .
+ns1:id_2023-S-101-313226_Notice	rdf:type	ns2:Notice ;
+	ns2:hasID	ns1:id_2023-S-101-313226_NoticeIdentifier_C5nS5y4XErvUqzRNMARW8r .
+ns1:id_2023-S-101-313226_NoticeIdentifier_C5nS5y4XErvUqzRNMARW8r	rdf:type	ns2:Identifier ;
+	ns2:hasIdentifierValue	"2023/S 101-313226" .
+ns1:id_2023-S-170-536107_AwardCriterionPrice_DRhJdosd6Y9c3T8UnSgTC9	rdf:type	ns2:AwardCriterion .
+@prefix ns3:	<http://publications.europa.eu/resource/authority/award-criterion-type/> .
+ns1:id_2023-S-170-536107_AwardCriterionPrice_DRhJdosd6Y9c3T8UnSgTC9	ns2:hasAwardCriterionType	ns3:price .
+ns1:id_2023-S-170-536107_AwardCriterionPrice_FowJL4khGZR579pakhqkDn	rdf:type	ns2:AwardCriterion ;
+	ns2:hasAwardCriterionType	ns3:price .
+ns1:id_2023-S-170-536107_Buyer_2DfWDD3NHHwpMGiWwzLc5d	rdf:type	ns2:Buyer .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+ns1:id_2023-S-170-536107_Buyer_2DfWDD3NHHwpMGiWwzLc5d	ns2:hasBuyerProfile	"https://www.berlin.de/vergabeplattform"^^xsd:anyURI ;
+	ns2:hasContactPointInRole	ns1:id_2023-S-170-536107_ContactPoint_UU5jeWb9wCr2uQLNME2nwM ;
+	ns2:playedBy	ns1:id_2023-S-170-536107_Organisation_UU5jeWb9wCr2uQLNME2nwM .
+@prefix ns5:	<http://data.europa.eu/m8g/> .
+ns1:id_2023-S-170-536107_ContactPoint_UU5jeWb9wCr2uQLNME2nwM	rdf:type	ns5:ContactPoint ;
+	ns2:hasInternetAddress	"https://www.berlin.de/vergabeplattform"^^xsd:anyURI ;
+	ns5:email	"vergabe-hochbau@senstadt.berlin.de" .
+@prefix dcterms:	<http://purl.org/dc/terms/> .
+ns1:id_2023-S-170-536107_ContractTermLotLocation_DgNm7RuiSQ47VBTvdrHsRv	rdf:type	dcterms:Location .
+@prefix ns7:	<http://data.europa.eu/nuts/code/> .
+ns1:id_2023-S-170-536107_ContractTermLotLocation_DgNm7RuiSQ47VBTvdrHsRv	ns2:hasNutsCode	ns7:DE300 .
+ns1:id_2023-S-170-536107_ContractTermLotLocation_diPp46XcmeHRAMFFenhpzZ	rdf:type	dcterms:Location ;
+	ns2:hasNutsCode	ns7:DE300 .
+ns1:id_2023-S-170-536107_ContractTermLot_DgNm7RuiSQ47VBTvdrHsRv	rdf:type	ns2:ContractTerm ;
+	ns2:definesSpecificPlaceOfPerformance	ns1:id_2023-S-170-536107_ContractTermLotLocation_DgNm7RuiSQ47VBTvdrHsRv ;
+	ns2:hasOptions	"false"^^xsd:boolean .
+ns1:id_2023-S-170-536107_ContractTermLot_diPp46XcmeHRAMFFenhpzZ	rdf:type	ns2:ContractTerm ;
+	ns2:definesSpecificPlaceOfPerformance	ns1:id_2023-S-170-536107_ContractTermLotLocation_diPp46XcmeHRAMFFenhpzZ ;
+	ns2:hasOptions	"false"^^xsd:boolean .
+ns1:id_2023-S-170-536107_ContractTermProcedure_C5nS5y4XErvUqzRNMARW8r	rdf:type	ns2:ContractTerm .
+@prefix ns8:	<http://publications.europa.eu/resource/authority/contract-nature/> .
+ns1:id_2023-S-170-536107_ContractTermProcedure_C5nS5y4XErvUqzRNMARW8r	ns2:hasContractNatureType	ns8:works .
+ns1:id_2023-S-170-536107_Contract_KaeDJ6cSC7UaS6sXtDUnvf	rdf:type	ns2:Contract .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+ns1:id_2023-S-170-536107_Contract_KaeDJ6cSC7UaS6sXtDUnvf	rdfs:comment	"Erroneous XML data: this contract does not have a <LOT_NO> element" ;
+	ns2:hasContractConclusionDate	"2023-08-10"^^xsd:date ;
+	ns2:resultsFromLotAwardOutcome	ns1:id_2023-S-170-536107_LotAwardOutcome_KaeDJ6cSC7UaS6sXtDUnvf .
+@prefix ns10:	<http://www.w3.org/ns/locn#> .
+ns1:id_2023-S-170-536107_ContractorOrganisationAddress_WFzZGbdirSo5EBhCMeQqCo	rdf:type	ns10:Address ;
+	ns10:postName	"Berlin" .
+@prefix ns11:	<http://publications.europa.eu/resource/authority/country/> .
+ns1:id_2023-S-170-536107_ContractorOrganisationAddress_WFzZGbdirSo5EBhCMeQqCo	ns2:hasCountryCode	ns11:DEU ;
+	ns2:hasNutsCode	ns7:DE300 .
+ns1:id_2023-S-170-536107_ContractorOrganisation_WFzZGbdirSo5EBhCMeQqCo	rdf:type	ns2:Business .
+@prefix ns12:	<http://www.w3.org/ns/org#> .
+ns1:id_2023-S-170-536107_ContractorOrganisation_WFzZGbdirSo5EBhCMeQqCo	rdf:type	ns12:Organization .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+ns1:id_2023-S-170-536107_ContractorOrganisation_WFzZGbdirSo5EBhCMeQqCo	owl:sameAs	ns1:id_2023-S-170-536107_ContractorOrganisation_WFzZGbdirSo5EBhCMeQqCo .
+@prefix ns14:	<http://publications.europa.eu/resource/authority/economic-operator-size/> .
+ns1:id_2023-S-170-536107_ContractorOrganisation_WFzZGbdirSo5EBhCMeQqCo	ns2:hasBusinessSize	ns14:sme ;
+	ns2:hasLegalName	"HM Ingenieure Bau GmbH"@de ;
+	ns5:registeredAddress	ns1:id_2023-S-170-536107_ContractorOrganisationAddress_WFzZGbdirSo5EBhCMeQqCo .
+ns1:id_2023-S-170-536107_LotAwardOutcomeAwardedMonetaryValue_KaeDJ6cSC7UaS6sXtDUnvf	rdf:type	ns2:MonetaryValue .
+@prefix ns15:	<http://publications.europa.eu/resource/authority/currency/> .
+ns1:id_2023-S-170-536107_LotAwardOutcomeAwardedMonetaryValue_KaeDJ6cSC7UaS6sXtDUnvf	ns2:hasCurrency	ns15:EUR ;
+	ns2:hasAmountValue	273422.48 .
+ns1:id_2023-S-170-536107_LotAwardOutcome_KaeDJ6cSC7UaS6sXtDUnvf	rdf:type	ns2:LotAwardOutcome ;
+	ns2:comprisesTenderAwardOutcome	ns1:id_2023-S-170-536107_TenderAwardOutcome_SM6UbUtHRXNqgrskZtVN8v .
+@prefix ns16:	<http://publications.europa.eu/resource/authority/winner-selection-status/> .
+ns1:id_2023-S-170-536107_LotAwardOutcome_KaeDJ6cSC7UaS6sXtDUnvf	ns2:hasAwardStatus	ns16:selec-w ;
+	ns2:hasAwardedValue	ns1:id_2023-S-170-536107_LotAwardOutcomeAwardedMonetaryValue_KaeDJ6cSC7UaS6sXtDUnvf .
+ns1:id_2023-S-170-536107_LotIdentifier_DgNm7RuiSQ47VBTvdrHsRv	rdf:type	ns2:Identifier ;
+	ns2:hasIdentifierValue	"KKE 5050.1 Betonarbeiten f\u00FCr St\u00FCtzmauern - Erdarbeiten - Nord" .
+ns1:id_2023-S-170-536107_LotIdentifier_diPp46XcmeHRAMFFenhpzZ	rdf:type	ns2:Identifier ;
+	ns2:hasIdentifierValue	"KKE 5050.1 Betonarbeiten f\u00FCr St\u00FCtzmauern - Erdarbeiten - S\u00FCd" .
+ns1:id_2023-S-170-536107_LotPurpose_DgNm7RuiSQ47VBTvdrHsRv	rdf:type	ns2:Purpose ;
+	ns2:hasAdditionalClassification	<http://data.europa.eu/cpv/cpv/45262210> ,
+		<http://data.europa.eu/cpv/cpv/45220000> ,
+		<http://data.europa.eu/cpv/cpv/45200000> ,
+		<http://data.europa.eu/cpv/cpv/45223000> ,
+		<http://data.europa.eu/cpv/cpv/45112000> ,
+		<http://data.europa.eu/cpv/cpv/45000000> ,
+		<http://data.europa.eu/cpv/cpv/45223500> .
+ns1:id_2023-S-170-536107_LotPurpose_diPp46XcmeHRAMFFenhpzZ	rdf:type	ns2:Purpose ;
+	ns2:hasAdditionalClassification	<http://data.europa.eu/cpv/cpv/45200000> ,
+		<http://data.europa.eu/cpv/cpv/45112000> ,
+		<http://data.europa.eu/cpv/cpv/45000000> .
+ns1:id_2023-S-170-536107_Lot_DgNm7RuiSQ47VBTvdrHsRv	rdf:type	ns2:Lot ;
+	ns2:foreseesContractSpecificTerm	ns1:id_2023-S-170-536107_ContractTermLot_DgNm7RuiSQ47VBTvdrHsRv ;
+	ns2:hasDescription	"Vorbereitende Ma\u00DFnahmen (Erdbau), Liefern und Herstellen von bewehrten Mauern und Fundamenten aus Ortbeton auf einem bis zu 18m hohen Erdwall."@de ;
+	ns2:hasID	ns1:id_2023-S-170-536107_LotIdentifier_DgNm7RuiSQ47VBTvdrHsRv ;
+	ns2:hasPurpose	ns1:id_2023-S-170-536107_LotPurpose_DgNm7RuiSQ47VBTvdrHsRv ;
+	ns2:isUsingEUFunds	"false"^^xsd:boolean ;
+	ns2:specifiesAwardCriterion	ns1:id_2023-S-170-536107_AwardCriterionPrice_DRhJdosd6Y9c3T8UnSgTC9 .
+ns1:id_2023-S-170-536107_Lot_diPp46XcmeHRAMFFenhpzZ	rdf:type	ns2:Lot ;
+	ns2:foreseesContractSpecificTerm	ns1:id_2023-S-170-536107_ContractTermLot_diPp46XcmeHRAMFFenhpzZ ;
+	ns2:hasDescription	"Vorbereitende Ma\u00DFnahmen (Erdbau), Liefern und Herstellen von bewehrten Mauern und Fundamenten aus Ortbeton auf einem bis zu 18m hohen Erdwall."@de ;
+	ns2:hasID	ns1:id_2023-S-170-536107_LotIdentifier_diPp46XcmeHRAMFFenhpzZ ;
+	ns2:hasPurpose	ns1:id_2023-S-170-536107_LotPurpose_diPp46XcmeHRAMFFenhpzZ ;
+	ns2:isUsingEUFunds	"false"^^xsd:boolean ;
+	ns2:specifiesAwardCriterion	ns1:id_2023-S-170-536107_AwardCriterionPrice_FowJL4khGZR579pakhqkDn .
+ns1:id_2023-S-170-536107_Notice	rdf:type	ns2:ResultNotice ,
+		ns2:Notice ;
+	ns2:announcesContract	ns1:id_2023-S-170-536107_Contract_KaeDJ6cSC7UaS6sXtDUnvf ;
+	ns2:announcesNoticeAwardInformation	ns1:id_2023-S-170-536107_NoticeAwardInformation_faF7Q5dyoGpXu3Ru4RGg73 ;
+	ns2:announcesRole	ns1:id_2023-S-170-536107_ReviewProcedureInformationProvider_eP5uWDhd4iYABCZbaj8dzQ ,
+		ns1:id_2023-S-170-536107_Winner_WFzZGbdirSo5EBhCMeQqCo ,
+		ns1:id_2023-S-170-536107_Reviewer_bdZjimbzCaRXbeYeBmF94j ,
+		ns1:id_2023-S-170-536107_Buyer_2DfWDD3NHHwpMGiWwzLc5d ;
+	ns2:announcesTender	ns1:id_2023-S-170-536107_Tender_SM6UbUtHRXNqgrskZtVN8v ;
+	ns2:hasDispatchDate	"2023-08-31"^^xsd:date ;
+	ns2:hasID	ns1:id_2023-S-170-536107_NoticeIdentifier_faF7Q5dyoGpXu3Ru4RGg73 ;
+	ns2:hasLegalBasis	<http://publications.europa.eu/resource/authority/legal-basis/32014L0024> ;
+	ns2:hasPublicationDate	"20230905" ;
+	ns2:refersToLot	ns1:id_2023-S-170-536107_Lot_DgNm7RuiSQ47VBTvdrHsRv ,
+		ns1:id_2023-S-170-536107_Lot_diPp46XcmeHRAMFFenhpzZ ;
+	ns2:refersToPrevious	ns1:id_2023-S-101-313226_Notice ;
+	ns2:refersToProcedure	ns1:id_2023-S-170-536107_Procedure_faF7Q5dyoGpXu3Ru4RGg73 .
+ns1:id_2023-S-170-536107_NoticeAwardInformation_faF7Q5dyoGpXu3Ru4RGg73	rdf:type	ns2:NoticeAwardInformation ;
+	ns2:hasTotalAwardedValue	ns1:id_2023-S-170-536107_ProcurementMonetaryValue_faF7Q5dyoGpXu3Ru4RGg73 .
+ns1:id_2023-S-170-536107_NoticeIdentifier_faF7Q5dyoGpXu3Ru4RGg73	rdf:type	ns2:Identifier ;
+	ns2:hasIdentifierValue	"2023/S 170-536107" .
+ns1:id_2023-S-170-536107_OrganisationAddress_UU5jeWb9wCr2uQLNME2nwM	rdf:type	ns10:Address ;
+	ns10:postCode	"10707" ;
+	ns10:postName	"Berlin" ;
+	ns10:thoroughfare	"Fehrbelliner Platz 2" ;
+	ns2:hasCountryCode	ns11:DEU ;
+	ns2:hasNutsCode	ns7:DE300 .
+ns1:id_2023-S-170-536107_Organisation_UU5jeWb9wCr2uQLNME2nwM	rdf:type	ns12:Organization ;
+	owl:sameAs	ns1:id_2023-S-170-536107_Organisation_UU5jeWb9wCr2uQLNME2nwM ;
+	ns2:hasLegalName	"Senatsverwaltung f\u00FCr Stadtentwicklung, Bauen und Wohnen"@de .
+@prefix ns17:	<http://publications.europa.eu/resource/authority/buyer-legal-type/> .
+ns1:id_2023-S-170-536107_Organisation_UU5jeWb9wCr2uQLNME2nwM	ns2:hasBuyerLegalType	ns17:rl-aut .
+@prefix ns18:	<http://publications.europa.eu/resource/authority/main-activity/> .
+ns1:id_2023-S-170-536107_Organisation_UU5jeWb9wCr2uQLNME2nwM	ns2:hasMainActivity	ns18:OP_DATPRO ;
+	ns2:hasMainActivityDescription	"Stadtentwicklung, Bauen und Wohnen" ;
+	ns5:registeredAddress	ns1:id_2023-S-170-536107_OrganisationAddress_UU5jeWb9wCr2uQLNME2nwM .
+ns1:id_2023-S-170-536107_ProcedureIdentifier_faF7Q5dyoGpXu3Ru4RGg73	rdf:type	ns2:Identifier ;
+	ns2:hasIdentifierValue	"VM_23149_VOB_O_Oez" .
+ns1:id_2023-S-170-536107_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73	rdf:type	ns2:Purpose ;
+	ns2:hasMainClassification	<http://data.europa.eu/cpv/cpv/45000000> .
+ns1:id_2023-S-170-536107_Procedure_faF7Q5dyoGpXu3Ru4RGg73	rdf:type	ns2:Procedure ;
+	ns2:foreseesContractSpecificTerm	ns1:id_2023-S-170-536107_ContractTermProcedure_C5nS5y4XErvUqzRNMARW8r ;
+	ns2:hasDescription	"Die ausgeschriebenen Leistungen werden im Bereich der Maifeldtrib\u00FCnen auf der n\u00F6rdlichen Seite (Los 1) und der s\u00FCdlichen Seite (Los 2) des Glockenturms im denkmalgesch\u00FCtzten Berliner Olympiapark durchgef\u00FChrt. Gegenstand der zu vergebenen Leistungen ist der Bau von Fundamenten und Mauern aus Stahlbeton im Hangbereich des bis zum 18m hohen Erdwalls, sowie die daf\u00FCr erforderlichen vorbereitenden Erdbauarbeiten."@de ;
+	ns2:hasID	ns1:id_2023-S-170-536107_ProcedureIdentifier_faF7Q5dyoGpXu3Ru4RGg73 .
+@prefix ns19:	<http://publications.europa.eu/resource/authority/procurement-procedure-type/> .
+ns1:id_2023-S-170-536107_Procedure_faF7Q5dyoGpXu3Ru4RGg73	ns2:hasProcedureType	ns19:open ;
+	ns2:hasProcurementScopeDividedIntoLot	ns1:id_2023-S-170-536107_Lot_DgNm7RuiSQ47VBTvdrHsRv ,
+		ns1:id_2023-S-170-536107_Lot_diPp46XcmeHRAMFFenhpzZ ;
+	ns2:hasPurpose	ns1:id_2023-S-170-536107_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73 ;
+	ns2:hasTitle	"KKE 5050.1 Betonarbeiten f\u00FCr St\u00FCtzmauern, Erdarbeiten-ID23149_Oez"@de ;
+	ns2:isCoveredByGPA	"true"^^xsd:boolean .
+ns1:id_2023-S-170-536107_ProcurementMonetaryValue_faF7Q5dyoGpXu3Ru4RGg73	rdf:type	ns2:MonetaryValue ;
+	ns2:hasCurrency	ns15:EUR ;
+	ns2:hasAmountValue	273422.48 .
+ns1:id_2023-S-170-536107_ReviewProcedureInformationProviderAddress_eP5uWDhd4iYABCZbaj8dzQ	rdf:type	ns10:Address ;
+	ns10:postCode	"10825" ;
+	ns10:postName	"Berlin" ;
+	ns10:thoroughfare	"Martin-Luther-Str. 105" ;
+	ns2:hasCountryCode	ns11:DEU .
+ns1:id_2023-S-170-536107_ReviewProcedureInformationProviderContactPoint_eP5uWDhd4iYABCZbaj8dzQ	rdf:type	ns5:ContactPoint ;
+	ns2:hasFax	"+49 3090137613" ;
+	ns5:telephone	"+49 3090138498" .
+ns1:id_2023-S-170-536107_ReviewProcedureInformationProviderOrganisation_eP5uWDhd4iYABCZbaj8dzQ	rdf:type	ns12:Organization ;
+	owl:sameAs	ns1:id_2023-S-170-536107_ReviewerOrganisation_bdZjimbzCaRXbeYeBmF94j ;
+	ns2:hasLegalName	"Vergabekammer des Landes Berlin"@de ;
+	ns2:hasPrimaryContactPoint	ns1:id_2023-S-170-536107_ReviewProcedureInformationProviderContactPoint_eP5uWDhd4iYABCZbaj8dzQ ;
+	ns5:registeredAddress	ns1:id_2023-S-170-536107_ReviewProcedureInformationProviderAddress_eP5uWDhd4iYABCZbaj8dzQ .
+ns1:id_2023-S-170-536107_ReviewProcedureInformationProvider_eP5uWDhd4iYABCZbaj8dzQ	rdf:type	ns2:ReviewProcedureInformationProvider ;
+	ns2:playedBy	ns1:id_2023-S-170-536107_ReviewProcedureInformationProviderOrganisation_eP5uWDhd4iYABCZbaj8dzQ .
+ns1:id_2023-S-170-536107_ReviewerContactPoint_bdZjimbzCaRXbeYeBmF94j	rdf:type	ns5:ContactPoint ;
+	ns2:hasFax	"+49 3090137613" ;
+	ns5:telephone	"+49 3090138316" .
+ns1:id_2023-S-170-536107_ReviewerOrganisationAddress_bdZjimbzCaRXbeYeBmF94j	rdf:type	ns10:Address ;
+	ns10:postCode	"10825" ;
+	ns10:postName	"Berlin" ;
+	ns10:thoroughfare	"Martin-Luther-Str. 105" ;
+	ns2:hasCountryCode	ns11:DEU .
+ns1:id_2023-S-170-536107_ReviewerOrganisation_bdZjimbzCaRXbeYeBmF94j	rdf:type	ns12:Organization ;
+	owl:sameAs	ns1:id_2023-S-170-536107_ReviewerOrganisation_bdZjimbzCaRXbeYeBmF94j ;
+	ns2:hasLegalName	"Vergabekammer des Landes Berlin"@de ;
+	ns2:hasPrimaryContactPoint	ns1:id_2023-S-170-536107_ReviewerContactPoint_bdZjimbzCaRXbeYeBmF94j ;
+	ns5:registeredAddress	ns1:id_2023-S-170-536107_ReviewerOrganisationAddress_bdZjimbzCaRXbeYeBmF94j .
+ns1:id_2023-S-170-536107_Reviewer_bdZjimbzCaRXbeYeBmF94j	rdf:type	ns2:Reviewer ;
+	ns2:playedBy	ns1:id_2023-S-170-536107_ReviewerOrganisation_bdZjimbzCaRXbeYeBmF94j .
+ns1:id_2023-S-170-536107_SubmissionStatisticalInformation_SM6UbUtHRXNqgrskZtVN8v	rdf:type	ns2:SubmissionStatisticalInformation ;
+	ns2:hasReceivedTenders	5 ;
+	ns2:summarisesInformationForLotAwardOutcome	ns1:id_2023-S-170-536107_LotAwardOutcome_KaeDJ6cSC7UaS6sXtDUnvf .
+ns1:id_2023-S-170-536107_TenderAwardOutcome_SM6UbUtHRXNqgrskZtVN8v	rdf:type	ns2:TenderAwardOutcome ;
+	ns2:describesTender	ns1:id_2023-S-170-536107_Tender_SM6UbUtHRXNqgrskZtVN8v ;
+	ns2:indicatesAwardOfLotToWinner	ns1:id_2023-S-170-536107_Winner_WFzZGbdirSo5EBhCMeQqCo .
+ns1:id_2023-S-170-536107_Tender_SM6UbUtHRXNqgrskZtVN8v	rdf:type	ns2:Tender ;
+	ns2:isSubmittedForLot	ns1:id_2023-S-170-536107_Lot_DgNm7RuiSQ47VBTvdrHsRv .
+ns1:id_2023-S-170-536107_Winner_WFzZGbdirSo5EBhCMeQqCo	rdf:type	ns2:Winner ;
+	ns2:playedBy	ns1:id_2023-S-170-536107_ContractorOrganisation_WFzZGbdirSo5EBhCMeQqCo .

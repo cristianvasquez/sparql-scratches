@@ -1,0 +1,14 @@
+[
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT ?Identifier ?label \nWHERE {\n        ?Identifier skos:notation \"45216000\" ;\n            skos:prefLabel ?label .\n        FILTER(LANG(?label) = 'fr')\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT ?broaderLabel ?label\nWHERE {\n        ?Identifier skos:notation \"45216000\" ;\n            skos:prefLabel ?label ;\n            skos:broader  [ skos:prefLabel ?broaderLabel ] .\n        FILTER(LANG(?label) = 'en')\n        FILTER(LANG(?broaderLabel) = 'en')\n}",
+    "metadata": {}
+  }
+]

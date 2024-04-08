@@ -1,0 +1,26 @@
+[
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# Which are the values of tenders for a given day? (Lots)\n\nPREFIX epo: <http://data.europa.eu/a4g/ontology#>\nPREFIX cccev: <http://data.europa.eu/m8g/>\n\nSELECT DISTINCT * where {\n\n    ?Notice epo:hasPublicationDate \"20230911\";\n            epo:refersToLot ?Lot .\n    ?Notice epo:announcesRole [\n        a epo:Buyer ;\n        epo:playedBy [\n            cccev:registeredAddress / epo:hasCountryCode ?countryCode ;\n            epo:hasLegalName ?LegalName \n        ]\n    ] .\n\n    ?LotAwardOutcome   epo:describesLot ?Lot ;\n                        epo:hasAwardedValue [ \n                            epo:hasAmountValue ?AwardedValue ;\n                            epo:hasCurrency ?LotAwardedValueCurrencyURI                        \n                        ]\n\n} limit 10",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# Which is the highest value published for a contract award for a given date?\n\nPREFIX epo: <http://data.europa.eu/a4g/ontology#>\nPREFIX org: <http://www.w3.org/ns/org#>\nPREFIX cccev: <http://data.europa.eu/m8g/>\nSELECT *\nWHERE {\n\n    ?Notice epo:hasPublicationDate \"20230905\" ;\n            epo:refersToLot ?LotURI .\n    ?LotAwardOutcome epo:describesLot ?LotURI ;\n                     epo:hasAwardedValue ?MonetaryValue ;\n                     epo:comprisesTenderAwardOutcome ?TenderAwardOutcome.\n    ?TenderAwardOutcome a epo:TenderAwardOutcome;\n                        epo:indicatesAwardOfLotToWinner / epo:playedBy ?Winner.\n    # ?Winner a org:Organization;\n    #         epo:hasLegalName ?WinnerLegalName .\n    # FILTER(LANG(?WinnerLegalName) = 'en')\n\n    # OPTIONAL {\n    #     ?Winner cccev:registeredAddress / epo:hasCountryCode ?WinnerCountryCode.\n    # }\n    ?MonetaryValue a epo:MonetaryValue;\n                   epo:hasAmountValue ?LotAwardedValue;\n                   epo:hasCurrency ?LotAwardedValueCurrency .\n}\n# ORDER BY DESC(?LotAwardedValue)\n# LIMIT 10\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX epo: <http://data.europa.eu/a4g/ontology#>\nPREFIX cccev: <http://data.europa.eu/m8g/>\nPREFIX org: <http://www.w3.org/ns/org#>\n\n\nSELECT DISTINCT\n*\nWHERE {\n    ?Notice epo:hasPublicationDate \"20230905\" ;\n            epo:announcesRole [\n                a epo:Buyer ;\n                epo:playedBy [\n                    cccev:registeredAddress [epo:hasCountryCode ?countryCode]  ;\n                    epo:hasLegalName ?LegalName \n                ] \n            ] ;\n            epo:refersToLot ?Lot .\n\n    ?LotAwardOutcome epo:describesLot ?Lot ;\n                     epo:hasAwardedValue [\n                        epo:hasAmountValue ?AwardedValue ;\n                        epo:hasCurrency <http://publications.europa.eu/resource/authority/currency/EUR>\n                     ] .\n\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "SELECT distinct * where {\n    <http://publications.europa.eu/resource/authority/country/PRT> ?p ?o  \n} limit 10",
+    "metadata": {}
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n    PREFIX ns5: <http://publications.europa.eu/ontology/euvoc#>\n\n    SELECT DISTINCT ?parent ?label\n    WHERE {{\n      <http://data.europa.eu/cpv/cpv/45112000> skos:broader* ?parent .\n      ?parent skos:prefLabel ?label ;\n              ns5:status <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;\n              skos:inScheme <http://data.europa.eu/cpv/cpv> .\n      FILTER(LANG(?label) = 'en')\n    }}",
+    "metadata": {}
+  }
+]

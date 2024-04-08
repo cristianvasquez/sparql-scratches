@@ -1,0 +1,8 @@
+[
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX epo: <http://data.europa.eu/a4g/ontology#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX euvoc: <http://publications.europa.eu/ontology/euvoc#>\nPREFIX at: <http://publications.europa.eu/resource/authority/concept-status/>\n\nSELECT   (count(?notice) as ?noticeCount) ?classificationLabel\nWHERE {\n    # The following returns notices published at a certain date, \n    # that refer to a procedure\n    # that have a purpose,\n    # that are classified with a CPV \n    ?notice a epo:Notice ;\n            epo:hasPublicationDate \"20230911\";\n            epo:refersToProcedure [ \n                a epo:Procedure ;\n                epo:hasPurpose [\n                    a epo:Purpose ;\n                    epo:hasMainClassification ?Identifier ;\n                    \n                ] \n            ] .\n    # For such CPV, return the labels in english\n    ?Identifier a skos:Concept ;\n    skos:prefLabel ?classificationLabel ;\n    euvoc:status at:CURRENT .\n    FILTER(LANG(?classificationLabel) = 'en')\n}\nGROUP BY ?classificationLabel\nORDER BY DESC(?noticeCount)\nLIMIT 10\n",
+    "metadata": {}
+  }
+]
